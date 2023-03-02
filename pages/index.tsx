@@ -1,7 +1,8 @@
 import Head from "next/head"
-import { useQuery } from "react-query"
+import { useQuery } from "@tanstack/react-query"
 
 import { Layout } from "@/components/layout"
+import { Card } from "@/components/ui/Card"
 
 export default function IndexPage() {
   const { isLoading, error, data } = useQuery({
@@ -13,7 +14,7 @@ export default function IndexPage() {
 
   if (isLoading) return "Loading..."
 
-  if (error) return "An error has occurred: " + error
+  if (error) return `An error has occurred:${error.message}`
 
   return (
     <Layout>
@@ -27,7 +28,18 @@ export default function IndexPage() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <section className="container grid items-center gap-6 pt-6 pb-8 md:py-10">
-        {console.log(data)}
+        {data.map((coin) => {
+          return (
+            <Card
+              current_price={coin.current_price}
+              name={coin.name}
+              key={coin.id}
+              ath={coin.ath}
+              image={coin.image}
+              max_supply={coin.max_supply}
+            ></Card>
+          )
+        })}
       </section>
     </Layout>
   )

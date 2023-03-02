@@ -5,13 +5,13 @@ import { ThemeProvider } from "next-themes"
 
 import "@/styles/globals.css"
 
-const queryClient = new QueryClient()
-
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
 })
+
+const queryClient = new QueryClient()
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
