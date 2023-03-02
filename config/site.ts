@@ -12,18 +12,26 @@ interface SiteConfig {
 }
 
 export const siteConfig: SiteConfig = {
-  name: "Next.js",
+  name: "Chainxplorer",
   description:
     "Beautifully designed components built with Radix UI and Tailwind CSS.",
   mainNav: [
     {
-      title: "Home",
+      title: "Prices",
       href: "/",
+    },
+    {
+      title: "Blocks",
+      href: "/blocks",
+    },
+    {
+      title: "AddressChecker",
+      href: "/address",
     },
   ],
   links: {
-    twitter: "https://twitter.com/shadcn",
-    github: "https://github.com/shadcn/ui",
+    twitter: "https://twitter.com/_Dav___",
+    github: "https://github.com/Dav-sa/Chainxplorer",
     docs: "https://ui.shadcn.com",
   },
 }
