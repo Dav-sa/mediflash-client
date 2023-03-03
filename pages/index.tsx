@@ -27,10 +27,12 @@ export default function IndexPage() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      {console.log(data)}
       <section className="container flex-col justify-center grid  gap-6 pt-6 pb-8 md:py-10 md:grid-cols-2 lg:grid-cols-3">
         {data.map((coin) => {
           return (
             <Card
+              id={coin.id}
               current_price={coin.current_price}
               name={coin.name}
               key={coin.id}

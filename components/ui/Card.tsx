@@ -1,8 +1,10 @@
 import Image from "next/image"
+import Router from "next/router"
 
 import { Button } from "./button"
 
 interface CardProps {
+  id: string
   name: string
   ath: number
   current_price: number
@@ -11,6 +13,7 @@ interface CardProps {
 }
 
 export const Card = ({
+  id,
   name,
   ath,
   current_price,
@@ -18,7 +21,10 @@ export const Card = ({
   max_supply,
 }: CardProps) => {
   return (
-    <div className="flex h-96 w-96 flex-col items-center rounded-xl border-sky-700 bg-slate-800 p-6 text-center hover:border-2 hover:border-solid hover:shadow-md">
+    <div
+      onClick={() => Router.push("/coins/[id]", `/coins/${id}`)}
+      className="flex h-96 w-96 flex-col items-center rounded-xl border-sky-700 bg-slate-800 p-6 text-center hover:border-2 hover:border-solid hover:shadow-md"
+    >
       <Image
         className="rounded-t-lg "
         src={image}
