@@ -27,7 +27,7 @@ export default function IndexPage() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <section className="container grid items-center gap-6 pt-6 pb-8 md:py-10">
+      <section className="container flex-col justify-center grid  gap-6 pt-6 pb-8 md:py-10 md:grid-cols-2 lg:grid-cols-3">
         {data.map((coin) => {
           return (
             <Card

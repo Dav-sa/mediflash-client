@@ -18,7 +18,7 @@ export const Card = ({
   max_supply,
 }: CardProps) => {
   return (
-    <div className="flex flex-col text-center items-center bg-slate-800 p-6">
+    <div className="flex h-96 w-96 flex-col items-center rounded-xl border-sky-700 bg-slate-800 p-6 text-center hover:border-2 hover:border-solid hover:shadow-md">
       <Image
         className="rounded-t-lg "
         src={image}
@@ -27,19 +27,15 @@ export const Card = ({
         height={150}
       />
 
-      <div className="p-6">
-        <h5 className="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
-          Name : {name}
-        </h5>
-        <p className="mb-4 text-base text-neutral-600 dark:text-neutral-200">
+      <div className="p-6 font-semibold">
+        <h5 className="mb-2 text-2xl ">Name : {name}</h5>
+        <p className="mb-4  dark:text-neutral-200">
           Current price : {current_price} $
         </p>
 
-        <p className="mb-4 text-base text-neutral-600 dark:text-neutral-200">
-          All time high : {ath} $
-        </p>
-        <p className="mb-4 text-base text-neutral-600 dark:text-neutral-200">
-          Max supply {max_supply}
+        <p className="mb-4  dark:text-neutral-200">All time high : {ath} $</p>
+        <p className="mb-4 dark:text-neutral-200">
+          Max supply : {max_supply ? max_supply : "No limit"}
         </p>
         <Button variant="default" size="default">
           More Details
