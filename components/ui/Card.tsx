@@ -35,12 +35,12 @@ export const Card = ({
 
       <div className="p-6 font-semibold">
         <h5 className="mb-2 text-2xl ">Name : {name}</h5>
-        <p className="mb-4  dark:text-neutral-200">
+        <p className="mb-4  hover:text-sky-300">
           Current price : {current_price} $
         </p>
 
-        <p className="mb-4  dark:text-neutral-200">All time high : {ath} $</p>
-        <p className="mb-4 dark:text-neutral-200">
+        <p className="mb-4  hover:text-sky-300">All time high : {ath} $</p>
+        <p className="mb-4 hover:text-sky-300">
           Max supply : {max_supply ? max_supply : "No limit"}
         </p>
         <Button variant="default" size="default">
