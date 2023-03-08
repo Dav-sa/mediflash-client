@@ -4,7 +4,7 @@
 
 1. First page is about crypto prices
 2. Second page displays latest block info
-3. Third page gives you what is inside an address
+3. Third page gives you what token holds an address
 
 ## Powered by NextJS, TypeScript, Tailwind
 
@@ -12,7 +12,7 @@
 
 ## Shadcn UI components
 
-## Ethers and Alchemy for the blockchain part
+## Ethers and Alchemy SDK for the blockchain interaction
 
 ## React-query for data-fetching
 
