@@ -24,13 +24,13 @@ export default function IndexPage() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <section className="container flex flex-col items-center justify-center pt-6 pb-8 md:grid-cols-2 md:py-10">
-        <div className="my-2 flex max-w-max justify-center rounded-lg border-2 border-solid border-slate-200 p-4">
+        <div className="my-2 mb-4 flex max-w-max justify-center rounded-lg border-2 border-solid border-slate-200 p-4">
           <p className="">Gas price is :</p>
           <p className="mx-2 font-semibold hover:text-sky-300">
             {data.gasPrice} ETH
           </p>
         </div>
-        <div className="flex max-w-max justify-center rounded-lg border-2 border-solid border-slate-200 p-4 px-16">
+        <div className="flex max-w-max justify-center rounded-lg border-2 border-solid border-slate-200 p-4 px-14">
           <p>Latest block number :</p>
           <p className="mx-2 font-semibold hover:text-sky-300">
             {data.blockNumber}
