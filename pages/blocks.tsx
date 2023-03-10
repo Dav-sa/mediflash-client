@@ -28,7 +28,7 @@ export default function IndexPage() {
         <BlockSearch></BlockSearch>
         <div className="my-2 mb-4 flex max-w-max justify-center rounded-lg border-2 border-solid border-slate-200 p-4 px-7 text-lg">
           <p className="">Gas price is :</p>
-          <p className="mx-2 font-semibold hover:text-sky-300">
+          <p className="mx-2 font-semibold hover:text-sky-300 md:px-18">
             {data.gasPrice} ETH
           </p>
         </div>
