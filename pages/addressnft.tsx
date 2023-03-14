@@ -24,11 +24,13 @@ export default function IndexPage() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <section className="container flex  flex-col items-center justify-center pt-6 pb-8 md:grid-cols-2 md:py-10">
+      <div className=" flex justify-center">
         <NftSearch
           setInput={setInput}
           searchHandler={searchHandler}
         ></NftSearch>
+      </div>
+      <section className="container grid flex-col justify-center  gap-6 pt-6 pb-8 md:grid-cols-2 md:py-10 lg:grid-cols-3">
         {results &&
           results.ownedNfts.map((nft) => (
             <NftCard
