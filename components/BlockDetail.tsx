@@ -1,11 +1,11 @@
-export const BlockDetail = ({ data }) => {
+export const BlockDetail = ({ data, title }) => {
   return (
     <>
       <div className="py-18 mt-6 flex flex-col rounded-lg border-2 border-solid border-slate-200 p-4 px-6 text-lg">
         <div className="flex justify-center">
-          <p className="my-2 text-xl font-semibold">Latest block info : </p>
+          <p className="my-2 text-xl font-semibold">{title} </p>
         </div>
-        <div className=" flex w-[400px] min-h-0 flex-col gap-2  p-6">
+        <div className=" flex min-h-0 w-[400px] flex-col gap-2  p-6">
           <p className="truncate hover:text-sky-300">
             <span className="truncate font-semibold ">Hash:</span>
             {data.blockWithTransactions.hash}

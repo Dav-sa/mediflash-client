@@ -5,13 +5,11 @@ import { Input } from "@/components/ui/input"
 import { BlockDetail } from "./BlockDetail"
 import { Button } from "./ui/button"
 
-export const BlockSearch = () => {
-  const [input, setInput] = useState<number>(0)
-  const [results, setResults] = useState({})
-  const searchHandler = async () => {
-    const data = await alchemy.core.getBlockWithTransactions(input)
-    setResults(data)
-  }
+export const BlockSearch = ({
+  setInput,
+
+  searchHandler,
+}) => {
   return (
     <>
       <div
@@ -27,7 +25,6 @@ export const BlockSearch = () => {
         <Button onClick={searchHandler} className="flex-1 px-2">
           Search
         </Button>
-        {console.log(results)}
       </div>
     </>
   )
