@@ -25,17 +25,23 @@ export const NftCard = ({
         height={150}
       />
 
-      <div className="p-6 font-semibold min-h-0 w-[400px]">
+      <div className="p-6 font-semibold min-h-0 w-[380px]">
         <p className="mb-2 text-2xl hover:text-sky-300 ">{name}</p>
-        <p className="mb-2 text-2xl hover:text-sky-300 truncate ">
-          Token id : {id}
-        </p>
+        <div className="flex justify-center">
+          <p className="mb-2 font-normal   truncate ">Token id :</p>
+          <p className="mb-2 mx-2 font-semibold hover:text-sky-300 truncate ">
+            {id}
+          </p>
+        </div>
 
-        <div className="flex truncate">
-          <p className="mb-2  hover:text-sky-300">Address : </p>
+        <div className="flex flex-col  truncate">
+          <p className="mb-2 font-normal  hover:text-sky-300">Address : </p>
           <p className="mb-2 hover:text-sky-300">{contract_address}</p>
         </div>
-        <p className=" hover:text-sky-300">Symbol : {symbol}</p>
+        <div className="flex justify-center">
+          <p className=" font-normal">Symbol :</p>
+          <p className="mx-2 hover:text-sky-300"> {symbol}</p>
+        </div>
       </div>
     </div>
   )
