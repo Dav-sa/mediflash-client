@@ -2,7 +2,7 @@ import { useState } from "react"
 import Head from "next/head"
 
 import { alchemy } from "@/lib/alchemy"
-import { ERC20Card } from "@/components/Erc20Card"
+import { Erc20Card } from "@/components/Erc20Card"
 import { Erc20Search } from "@/components/Erc20Search"
 import { Layout } from "@/components/layout"
 
@@ -17,6 +17,7 @@ export default function IndexPage() {
     )
     setResults(erc20ForAddress)
   }
+
   return (
     <Layout>
       <Head>
@@ -36,7 +37,7 @@ export default function IndexPage() {
         ></Erc20Search>
       </div>
       {console.log(results)}
-      <section className="container grid flex-col justify-center  gap-6 pt-6 pb-8 md:grid-cols-2 md:py-10 lg:grid-cols-3"></section>
+      <section className="container grid flex-col justify-center gap-6 pt-6 pb-8 md:grid-cols-2 md:py-10 lg:grid-cols-3"></section>
     </Layout>
   )
 }

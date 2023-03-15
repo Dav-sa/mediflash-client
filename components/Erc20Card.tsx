@@ -7,7 +7,7 @@ interface Erc20CardProps {
   token_balance: string
 }
 
-export const ERC20Card = ({
+export const Erc20Card = ({
   image,
   name,
   contract_address,
