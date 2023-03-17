@@ -29,7 +29,7 @@ export default function IndexPage() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="flex justify-center">
+      <div className="flex items-centered justify-center">
         <Erc20Search
           setWalletAddress={setWalletAddress}
           searchHandler={searchHandler}
@@ -37,7 +37,15 @@ export default function IndexPage() {
         ></Erc20Search>
       </div>
       {console.log(results)}
-      <section className="container grid flex-col justify-center gap-6 pt-6 pb-8 md:grid-cols-2 md:py-10 lg:grid-cols-3"></section>
+      <section className="container grid flex-col justify-center gap-6 pt-6 pb-8 md:grid-cols-2 md:py-10 lg:grid-cols-3">
+        {results ? (
+          <Erc20Card
+            wallet_address={results.address}
+            contract_address={results.tokenBalances[0].contractAddress}
+            token_balance={results.tokenBalances[0].tokenBalance}
+          ></Erc20Card>
+        ) : null}
+      </section>
     </Layout>
   )
 }

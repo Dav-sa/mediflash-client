@@ -20,7 +20,7 @@ export const Erc20Search = ({
   return (
     <>
       <div
-        className="flex w-1/2 flex-col justify-center gap-4 space-x-6 p-4 
+        className="flex w-1/2 flex-col items-center justify-center gap-4 space-x-6 p-4 
       "
       >
         <Input
@@ -41,7 +41,7 @@ export const Erc20Search = ({
           </SelectContent>
         </Select>
 
-        <Button onClick={searchHandler} className="max-w-[140px] px-2">
+        <Button onClick={searchHandler} className="w-[140px] px-2">
           Search
         </Button>
       </div>
