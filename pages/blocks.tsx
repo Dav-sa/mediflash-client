@@ -39,14 +39,14 @@ export default function IndexPage() {
           setInput={setInput}
           searchHandler={searchHandler}
         ></BlockSearch>
-        <div className="my-2 mb-4 flex max-w-max justify-center rounded-lg border-2 border-solid border-slate-200 p-4 px-7 text-lg">
-          <p className="">Gas price is :</p>
+        <div className="my-2 mb-4 flex max-w-max text-left rounded-lg border-2 border-solid min-w-[402px]  border-slate-200 p-4 px-7 ">
+          <p className="">Gas price :</p>
           <p className="md:px-18 mx-2 font-semibold hover:text-sky-300">
             {data.gasPrice} ETH
           </p>
         </div>
-        <div className=" flex max-w-max justify-center rounded-lg border-2 border-solid border-slate-200 p-4 px-20 text-lg">
-          <p>Latest block number :</p>
+        <div className="my-2 mb-4 flex min-w-[402px] text-left  rounded-lg border-2 border-solid border-slate-200 p-4 px-7 ">
+          <p className="">Latest block number :</p>
           <p className="mx-2 font-semibold hover:text-sky-300">
             {data.blockNumber}
           </p>

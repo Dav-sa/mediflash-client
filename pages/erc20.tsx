@@ -37,7 +37,7 @@ export default function IndexPage() {
         ></Erc20Search>
       </div>
       {console.log(results)}
-      <section className="container grid flex-col justify-center gap-6 pt-6 pb-8 md:grid-cols-2 md:py-10 lg:grid-cols-3">
+      <section className="container grid flex-col justify-center gap-6 pt-6 pb-8 ">
         {results ? (
           <Erc20Card
             wallet_address={results.address}

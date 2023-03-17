@@ -33,15 +33,23 @@ export const Card = ({
         height={150}
       />
 
-      <div className="p-6 font-semibold">
-        <h5 className="mb-2 text-2xl ">Name : {name}</h5>
+      <div className="p-6">
+        <p className="mb-2 text-2xl ">
+          Name : <span className="font-semibold">{name}</span>
+        </p>
         <p className="mb-4  hover:text-sky-300">
-          Current price : {current_price} $
+          Current price :{" "}
+          <span className="font-semibold"> {current_price} $</span>
         </p>
 
-        <p className="mb-4  hover:text-sky-300">All time high : {ath} $</p>
+        <p className="mb-4  hover:text-sky-300">
+          All time high : <span className="font-semibold">{ath} $</span>{" "}
+        </p>
         <p className="mb-4 hover:text-sky-300">
-          Max supply : {max_supply ? max_supply : "No limit"}
+          Max supply :{" "}
+          <span className="font-semibold">
+            {max_supply ? max_supply : "No limit"}
+          </span>
         </p>
         <Button variant="default" size="default">
           More Details
