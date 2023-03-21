@@ -6,17 +6,27 @@ import { useQuery } from "@tanstack/react-query"
 import { alchemy } from "@/lib/alchemy"
 import { BlockDetail } from "@/components/BlockDetail"
 import { BlockSearch } from "@/components/BlockSearch"
+import { Error } from "@/components/Error"
 import { Layout } from "@/components/layout"
 
 export default function IndexPage() {
+  const [error, setError] = useState(false)
   const [input, setInput] = useState<number>(0)
   const [results, setResults] = useState(null)
   const searchHandler = async () => {
-    const blockWithTransactions = await alchemy.core.getBlockWithTransactions(
-      input
-    )
-    setResults(blockWithTransactions)
+    setError(false)
+    try {
+      const blockWithTransactions = await alchemy.core.getBlockWithTransactions(
+        input
+      )
+      setResults(blockWithTransactions)
+    } catch (error) {
+      console.log(error)
+      setError(true)
+    }
+    setInput(0)
   }
+
   const { data, isLoading, isError } = useQuery(["blocks"], fetchBlock)
 
   if (isLoading) return "Loading..."
@@ -39,13 +49,13 @@ export default function IndexPage() {
           setInput={setInput}
           searchHandler={searchHandler}
         ></BlockSearch>
-        <div className="my-2 mb-4 flex max-w-max text-left rounded-lg border-2 border-solid min-w-[402px]  border-slate-200 p-4 px-7 ">
+        <div className="my-2 mb-4 flex min-w-[402px] max-w-max rounded-lg border-2 border-solid border-slate-200  p-4 px-7 text-left ">
           <p className="">Gas price :</p>
           <p className="md:px-18 mx-2 font-semibold hover:text-sky-300">
             {data.gasPrice} ETH
           </p>
         </div>
-        <div className="my-2 mb-4 flex min-w-[402px] text-left  rounded-lg border-2 border-solid border-slate-200 p-4 px-7 ">
+        <div className="my-2 mb-4 flex min-w-[402px] rounded-lg  border-2 border-solid border-slate-200 p-4 px-7 text-left ">
           <p className="">Latest block number :</p>
           <p className="mx-2 font-semibold hover:text-sky-300">
             {data.blockNumber}
@@ -59,6 +69,7 @@ export default function IndexPage() {
             data={{ blockWithTransactions: results }}
           />
         )}
+        {error && <Error></Error>}
       </section>
     </Layout>
   )
