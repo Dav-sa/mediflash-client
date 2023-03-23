@@ -20,7 +20,7 @@ export default function IndexPage() {
       </Layout>
     )
 
-  if (error) return `An error has occurred:${error.message}`
+  if (error) return `An error has occurred`
 
   return (
     <Layout>
