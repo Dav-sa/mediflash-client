@@ -1,6 +1,7 @@
 import Head from "next/head"
 import { useQuery } from "@tanstack/react-query"
 
+import { Loading } from "@/components/Loading"
 import { Layout } from "@/components/layout"
 import { Card } from "@/components/ui/Card"
 
@@ -12,7 +13,12 @@ export default function IndexPage() {
       `).then((res) => res.json()),
   })
 
-  if (isLoading) return "Loading..."
+  if (isLoading)
+    return (
+      <Layout>
+        <Loading></Loading>
+      </Layout>
+    )
 
   if (error) return `An error has occurred:${error.message}`
 

@@ -25,8 +25,12 @@ export const siteConfig: SiteConfig = {
       href: "/blocks",
     },
     {
-      title: "AddressChecker",
-      href: "/address",
+      title: "NFTS",
+      href: "/nft",
+    },
+    {
+      title: "erc20",
+      href: "/erc20",
     },
   ],
   links: {
