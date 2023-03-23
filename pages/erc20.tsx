@@ -4,18 +4,25 @@ import Head from "next/head"
 import { alchemy } from "@/lib/alchemy"
 import { Erc20Card } from "@/components/Erc20Card"
 import { Erc20Search } from "@/components/Erc20Search"
+import { Error } from "@/components/Error"
 import { Layout } from "@/components/layout"
 
 export default function IndexPage() {
+  const [error, setError] = useState(false)
   const [walletAddress, setWalletAddress] = useState<string>("0x...")
   const [contractsAddress, setContractsAddress] = useState([])
   const [results, setResults] = useState(null)
   const searchHandler = async () => {
-    const erc20ForAddress = await alchemy.core.getTokenBalances(
-      walletAddress,
-      contractsAddress
-    )
-    setResults(erc20ForAddress)
+    setError(false)
+    try {
+      const erc20ForAddress = await alchemy.core.getTokenBalances(
+        walletAddress,
+        contractsAddress
+      )
+      setResults(erc20ForAddress)
+    } catch (error) {
+      setError(true)
+    }
   }
 
   return (
@@ -36,7 +43,6 @@ export default function IndexPage() {
           setContractsAddress={setContractsAddress}
         ></Erc20Search>
       </div>
-      {console.log(results)}
       <section className="container grid flex-col justify-center gap-6 pt-6 pb-8 ">
         {results ? (
           <Erc20Card
@@ -45,6 +51,7 @@ export default function IndexPage() {
             token_balance={results.tokenBalances[0].tokenBalance}
           ></Erc20Card>
         ) : null}
+        {error && <Error message="Wrong address informations"></Error>}
       </section>
     </Layout>
   )

@@ -7,6 +7,7 @@ import { alchemy } from "@/lib/alchemy"
 import { BlockDetail } from "@/components/BlockDetail"
 import { BlockSearch } from "@/components/BlockSearch"
 import { Error } from "@/components/Error"
+import { Loading } from "@/components/Loading"
 import { Layout } from "@/components/layout"
 
 export default function IndexPage() {
@@ -21,7 +22,6 @@ export default function IndexPage() {
       )
       setResults(blockWithTransactions)
     } catch (error) {
-      console.log(error)
       setError(true)
     }
     setInput(0)
@@ -29,7 +29,12 @@ export default function IndexPage() {
 
   const { data, isLoading, isError } = useQuery(["blocks"], fetchBlock)
 
-  if (isLoading) return "Loading..."
+  if (isLoading)
+    return (
+      <Layout>
+        <Loading></Loading>
+      </Layout>
+    )
 
   if (isError) return `An error has occurred`
 
@@ -69,7 +74,7 @@ export default function IndexPage() {
             data={{ blockWithTransactions: results }}
           />
         )}
-        {error && <Error></Error>}
+        {error && <Error message="Invalid block info"></Error>}
       </section>
     </Layout>
   )

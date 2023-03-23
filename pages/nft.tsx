@@ -2,16 +2,24 @@ import { useState } from "react"
 import Head from "next/head"
 
 import { alchemy } from "@/lib/alchemy"
+import { Error } from "@/components/Error"
 import { NftCard } from "@/components/NftCard"
 import { NftSearch } from "@/components/NftSearch"
 import { Layout } from "@/components/layout"
 
 export default function IndexPage() {
+  const [error, setError] = useState(false)
   const [input, setInput] = useState<string>("0x...")
   const [results, setResults] = useState(null)
   const searchHandler = async () => {
-    const NftForAddress = await alchemy.nft.getNftsForOwner(input)
-    setResults(NftForAddress)
+    setError(false)
+    try {
+      const NftForAddress = await alchemy.nft.getNftsForOwner(input)
+      setResults(NftForAddress)
+    } catch (error) {
+      setError(true)
+    }
+    setInput("")
   }
   return (
     <Layout>
@@ -41,6 +49,7 @@ export default function IndexPage() {
               contract_address={nft.contract.address}
             ></NftCard>
           ))}
+        {error && <Error message="Wrong address informations"></Error>}
       </section>
     </Layout>
   )
