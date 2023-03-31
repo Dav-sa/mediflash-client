@@ -11,6 +11,9 @@ Chainxplorer is a blockchain explorer that allows you to search for a token, an 
 3. Third page displays the NFTS of an address
 4. Fourth page displays the erc20 tokens of an address
 
+![image](https://user-images.githubusercontent.com/68847199/229072407-1b3a27ec-16c4-4b2f-a24b-ffc3ce7b734c.png)
+
+
 ## The stack
 
 - NextJS
@@ -19,6 +22,9 @@ Chainxplorer is a blockchain explorer that allows you to search for a token, an 
 - [Shadcn UI](https://ui.shadcn.com/) components
 - Ethers and Alchemy SDK for the blockchain interaction
 - React-query for data-fetching
+
+![image](https://user-images.githubusercontent.com/68847199/229072503-cdde06aa-aa42-46af-b277-5c740c532981.png)
+
 
 ## Things I learned
 
@@ -32,5 +38,6 @@ Chainxplorer is a blockchain explorer that allows you to search for a token, an 
 
 - Ethers.js felt hard to use at first.
 - Testing coverage with React-testing-library and Jest.
+- Adding pagination to NFT page. 
 - Maybe try to dockerize the app and deploy it on a VPS.
 - While I'm at it, setting up a CI/CD pipeline with Github Actions could be nice.
