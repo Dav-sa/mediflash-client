@@ -4,7 +4,8 @@
 
 TL:DR
 
-Chainxplorer is a blockchain explorer that allows you to search for a token, an address, or a block. It also displays the latest block info and the latest crypto prices.
+Chainxplorer is a blockchain explorer that allows you to search for a token, an address, or a block. It also displays the latest block info and the latest crypto prices. [See the demo here](
+https://chainxplorer.vercel.app )
 
 1. First page displays latest crypto prices
 2. Second page displays latest block info
