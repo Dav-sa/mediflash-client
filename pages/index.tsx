@@ -32,7 +32,17 @@ export default function IndexPage() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <section className="container grid flex-col justify-center  gap-6 pt-6 pb-8 md:grid-cols-2 md:py-10 lg:grid-cols-3">
-        {console.log(data)}
+        {data.nfts.map((nft) => {
+          return (
+            <Card
+              key={nft.tokenId}
+              thumbnail={nft.media[0].thumbnail}
+              title={nft.title}
+              tokenId={nft.tokenId}
+              symbol={nft.contract.symbol}
+            ></Card>
+          )
+        })}
       </section>
     </Layout>
   )

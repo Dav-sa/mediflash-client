@@ -2,7 +2,7 @@
 
 const nextConfig = {
   images: {
-    domains: ["assets.coingecko.com", "i.seadn.io"],
+    domains: ["res.cloudinary.com"],
   },
   reactStrictMode: true,
   experimental: {

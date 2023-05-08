@@ -4,54 +4,40 @@ import Router from "next/router"
 import { Button } from "./button"
 
 interface CardProps {
-  id: string
-  name: string
-  ath: number
-  current_price: number
-  image: string
-  max_supply: number
+  title: string
+  tokenId: string
+  symbol: string
+  thumbnail: string
 }
 
-export const Card = ({
-  id,
-  name,
-  ath,
-  current_price,
-  image,
-  max_supply,
-}: CardProps) => {
+export const Card = ({ title, tokenId, symbol, thumbnail }: CardProps) => {
   return (
-    <div
-      onClick={() => Router.push("/coins/[id]", `/coins/${id}`)}
-      className="h-aut flex w-auto flex-col items-center rounded-xl border-sky-700 bg-slate-800 p-6 text-center hover:border-2 hover:border-solid hover:shadow-md"
-    >
+    <div className=" flex flex-col items-center rounded-xl border-sky-700 bg-slate-800 p-6 text-center hover:border-2 hover:border-solid ">
       <Image
         className="rounded-t-lg "
-        src={image}
-        alt="picture of the coin"
+        src={thumbnail}
+        alt="picture of the nft"
         width={100}
         height={150}
       />
 
       <div className="p-6">
-        <p className="mb-2 text-2xl ">
-          Name : <span className="font-semibold">{name}</span>
+        <p className="mb-2 text-xl hover:text-sky-300 ">
+          Title : <span className="font-semibold">{title}</span>
         </p>
         <p className="mb-4  hover:text-sky-300">
-          Current price :{" "}
-          <span className="font-semibold"> {current_price} $</span>
+          Token Id :<span className="font-semibold"> {tokenId} </span>
         </p>
 
         <p className="mb-4  hover:text-sky-300">
-          All time high : <span className="font-semibold">{ath} $</span>{" "}
+          Symbol : <span className="font-semibold">{symbol} $</span>
         </p>
-        <p className="mb-4 hover:text-sky-300">
-          Max supply :{" "}
-          <span className="font-semibold">
-            {max_supply ? max_supply : "No limit"}
-          </span>
-        </p>
-        <Button variant="default" size="default">
+
+        <Button
+          variant="default"
+          size="default"
+          onClick={() => Router.push("/coins/[id]", `/coins/${tokenId}`)}
+        >
           More Details
         </Button>
       </div>
