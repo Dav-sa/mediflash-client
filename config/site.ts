@@ -12,25 +12,16 @@ interface SiteConfig {
 }
 
 export const siteConfig: SiteConfig = {
-  name: "Chainxplorer",
-  description:
-    "Beautifully designed components built with Radix UI and Tailwind CSS.",
+  name: "Ternoa Test",
+  description: "Ternoa technical assessment",
   mainNav: [
     {
-      title: "Prices",
+      title: "Nfts",
       href: "/",
     },
     {
-      title: "Blocks",
+      title: "Likes",
       href: "/blocks",
-    },
-    {
-      title: "NFTS",
-      href: "/nft",
-    },
-    {
-      title: "erc20",
-      href: "/erc20",
     },
   ],
   links: {
