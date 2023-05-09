@@ -26,7 +26,7 @@ export const siteConfig: SiteConfig = {
   ],
   links: {
     twitter: "https://twitter.com/_Dav___",
-    github: "https://github.com/Dav-sa/Chainxplorer",
+    github: "https://github.com/Dav-sa/",
     docs: "https://ui.shadcn.com",
   },
 }
