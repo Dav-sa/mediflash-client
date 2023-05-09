@@ -1,6 +1,7 @@
 import type { AppProps } from "next/app"
 import { useRouter } from "next/router"
 import { ClerkProvider } from "@clerk/nextjs"
+import { dark } from "@clerk/themes"
 import { Inter as FontSans } from "@next/font/google"
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { ThemeProvider } from "next-themes"
@@ -30,6 +31,13 @@ export default function App({ Component, pageProps }: AppProps) {
         {...pageProps}
         frontendApi={clerkFrontendApi}
         navigate={(to) => router.push(to)}
+        appearance={{
+          baseTheme: dark,
+          variables: {
+            colorBackground: "#0f172a",
+            borderRadius: "0.5rem",
+          },
+        }}
       >
         <QueryClientProvider client={queryClient}>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>

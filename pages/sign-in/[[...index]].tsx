@@ -4,7 +4,7 @@ import { Layout } from "@/components/layout"
 
 const SignInPage = () => (
   <Layout>
-    <div className="container flex-col items-center justify-center md:py-10 ">
+    <div className="container my-6  flex justify-center border-solid border-2 border-slate-500 ">
       <SignIn></SignIn>
     </div>
   </Layout>
