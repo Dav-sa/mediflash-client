@@ -1,6 +1,5 @@
 import { useState } from "react"
 import Head from "next/head"
-import { SignIn, SignUp } from "@clerk/nextjs"
 import { useQuery } from "@tanstack/react-query"
 
 import { alchemy } from "@/lib/alchemy"
@@ -44,8 +43,6 @@ export default function IndexPage() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <section className="container grid flex-col justify-center  gap-6 pt-6 pb-8 md:grid-cols-2 md:py-10 lg:grid-cols-3">
-        <SignIn></SignIn>
-        <SignUp></SignUp>
         {paginatedPosts &&
           paginatedPosts.map((nft) => {
             return (
