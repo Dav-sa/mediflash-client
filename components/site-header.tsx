@@ -5,6 +5,7 @@ import { Icons } from "@/components/icons"
 import { MainNav } from "@/components/main-nav"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { buttonVariants } from "@/components/ui/button"
+import { Web3Button } from "./ui/Web3Button"
 
 export function SiteHeader() {
   return (
@@ -13,6 +14,10 @@ export function SiteHeader() {
         <MainNav items={siteConfig.mainNav} />
         <div className="flex flex-1 items-center justify-end space-x-4">
           <nav className="flex items-center space-x-1">
+            <Web3Button
+              clickHandler={() => console.log("clicked")}
+            ></Web3Button>
+
             <Link
               href={siteConfig.links.github}
               target="_blank"

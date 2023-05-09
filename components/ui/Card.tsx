@@ -21,11 +21,11 @@ export const Card = ({ title, tokenId, symbol, thumbnail }: CardProps) => {
         height={150}
       />
 
-      <div className="p-6">
+      <div className="p-2">
         <p className="mb-2 text-xl hover:text-sky-300 ">
           Title : <span className="font-semibold">{title}</span>
         </p>
-        <p className="mb-4  hover:text-sky-300">
+        <p className="mb-2 hover:text-sky-300">
           Token Id :<span className="font-semibold"> {tokenId} </span>
         </p>
 
