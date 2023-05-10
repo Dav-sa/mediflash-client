@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query"
 
 import { alchemy } from "@/lib/alchemy"
 import { paginate } from "@/lib/paginate"
+import { prisma } from "@/lib/prismaClient"
 import { Loading } from "@/components/Loading"
 import { Layout } from "@/components/layout"
 import { Card } from "@/components/ui/Card"
@@ -18,6 +19,7 @@ export default function IndexPage() {
   const { isLoading, error, data } = useQuery(["getNfts"], () =>
     alchemy.nft.getNftsForContract("0xB003ce92F3b2A8F3dd99207C351eAf05BC605262")
   )
+
   const paginatedPosts = data
     ? paginate(data.nfts, currentPage, pageSize)
     : null

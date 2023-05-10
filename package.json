@@ -1,4 +1,4 @@
-{
+{ 
   "name": "next-template",
   "version": "0.0.1",
   "private": true,
@@ -16,6 +16,7 @@
     "@clerk/nextjs": "^4.17.2",
     "@clerk/themes": "^1.6.4",
     "@next/font": "^13.1.6",
+    "@prisma/client": "^4.14.0",
     "@radix-ui/react-accessible-icon": "^1.0.1",
     "@radix-ui/react-accordion": "^1.1.0",
     "@radix-ui/react-alert-dialog": "^1.0.2",
@@ -53,6 +54,7 @@
     "net": "^1.0.2",
     "next": "^13.1.6",
     "next-themes": "^0.2.1",
+    "prisma": "^4.14.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sharp": "^0.31.3",

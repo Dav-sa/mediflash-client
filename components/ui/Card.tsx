@@ -1,5 +1,8 @@
+import { useState } from "react"
 import Image from "next/image"
 import Router from "next/router"
+import { useUser } from "@clerk/nextjs"
+import { Heart } from "lucide-react"
 
 import { Button } from "./button"
 
@@ -11,6 +14,23 @@ interface CardProps {
 }
 
 export const Card = ({ title, tokenId, symbol, thumbnail }: CardProps) => {
+  const { isSignedIn, user, isLoaded } = useUser()
+  const pubKey = user?.web3Wallets[0].web3Wallet
+  const submitData = async (e: React.SyntheticEvent) => {
+    e.preventDefault()
+    try {
+      console.log("coucou")
+      const body = { title, pubKey }
+      await fetch("/api/likes", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      })
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
   return (
     <div className=" flex flex-col items-center rounded-xl border-sky-700 bg-slate-800 p-6 text-center hover:border-2 hover:border-solid ">
       <Image
@@ -21,26 +41,23 @@ export const Card = ({ title, tokenId, symbol, thumbnail }: CardProps) => {
         height={150}
       />
 
-      <div className="p-2">
+      <div className="mt-2 p-2 ">
         <p className="mb-2 text-xl hover:text-sky-300 ">
           Title : <span className="font-semibold">{title}</span>
         </p>
         <p className="mb-2 hover:text-sky-300">
-          Token Id :<span className="font-semibold"> {tokenId} </span>
+          Token Id :<span className="font-semibold">{tokenId}</span>
         </p>
 
         <p className="mb-4  hover:text-sky-300">
           Symbol : <span className="font-semibold">{symbol} $</span>
         </p>
-
-        <Button
-          variant="default"
-          size="default"
-          onClick={() => Router.push("/coins/[id]", `/coins/${tokenId}`)}
-        >
-          More Details
-        </Button>
       </div>
+      <form>
+        <input type="text" defaultValue={title} />
+        <input type="text" defaultValue={pubKey} />
+        <Button type="submit" onClick={submitData}></Button>
+      </form>
     </div>
   )
 }
