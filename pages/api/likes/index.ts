@@ -1,14 +1,19 @@
-import { prisma } from "@/lib/script"
+import { prisma } from "@/lib/prismaClient"
 
 export default async function handle(req, res) {
-  const { title, pubKey } = req.body
+  const { title, pubkey } = req.body
 
   const updateNft = await prisma.nft.update({
     where: {
       Title: title,
     },
     data: {
-      LikedBy: pubKey,
+      LikedBy: {
+        connect: {
+          pubkey: pubkey,
+        },
+      },
     },
   })
+  res.json(updateNft)
 }

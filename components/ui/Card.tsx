@@ -15,14 +15,14 @@ interface CardProps {
 
 export const Card = ({ title, tokenId, symbol, thumbnail }: CardProps) => {
   const { isSignedIn, user, isLoaded } = useUser()
-  const pubKey = user?.web3Wallets[0].web3Wallet
+  const pubkey = user?.web3Wallets[0].web3Wallet
   const submitData = async (e: React.SyntheticEvent) => {
     e.preventDefault()
     try {
       console.log("coucou")
-      const body = { title, pubKey }
+      const body = { title, pubkey }
       await fetch("/api/likes", {
-        method: "POST",
+        method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
       })
@@ -55,7 +55,7 @@ export const Card = ({ title, tokenId, symbol, thumbnail }: CardProps) => {
       </div>
       <form>
         <input type="text" defaultValue={title} />
-        <input type="text" defaultValue={pubKey} />
+        <input type="text" defaultValue={pubkey} />
         <Button type="submit" onClick={submitData}></Button>
       </form>
     </div>
