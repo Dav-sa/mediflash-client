@@ -21,7 +21,6 @@ export default function LikePage() {
       <section className="container grid flex-col justify-center  gap-6 pt-6 pb-8 md:grid-cols-2 md:py-10 lg:grid-cols-3">
         {data &&
           data.map((nft) => {
-            console.log(nft)
             return (
               <CardWithLikes
                 title={nft.Title}

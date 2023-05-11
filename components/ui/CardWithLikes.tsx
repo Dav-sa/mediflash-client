@@ -5,9 +5,10 @@ export const CardWithLikes = ({ title, likes }) => {
         <p className="mb-2 text-xl hover:text-sky-300 ">
           Title : <span className="font-semibold">{title}</span>
         </p>
+        <p>Liked by :</p>
         {likes &&
           likes.map((user) => {
-            return <p className="truncate">Liked by : {user.pubkey}</p>
+            return <p className="">{user.pubkey}</p>
           })}
       </div>
     </div>
