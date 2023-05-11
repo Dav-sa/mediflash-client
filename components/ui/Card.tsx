@@ -1,6 +1,4 @@
-import { useState } from "react"
 import Image from "next/image"
-import Router from "next/router"
 import { useUser } from "@clerk/nextjs"
 import { Heart } from "lucide-react"
 
@@ -19,7 +17,6 @@ export const Card = ({ title, tokenId, symbol, thumbnail }: CardProps) => {
   const submitData = async (e: React.SyntheticEvent) => {
     e.preventDefault()
     try {
-      console.log("coucou")
       const body = { title, pubkey }
       await fetch("/api/likes", {
         method: "PUT",
@@ -53,11 +50,15 @@ export const Card = ({ title, tokenId, symbol, thumbnail }: CardProps) => {
           Symbol : <span className="font-semibold">{symbol} $</span>
         </p>
       </div>
-      <form>
-        <input type="text" defaultValue={title} />
-        <input type="text" defaultValue={pubkey} />
-        <Button type="submit" onClick={submitData}></Button>
-      </form>
+      {user ? (
+        <form>
+          <input className="hidden" type="text" defaultValue={title} />
+          <input className="hidden" type="text" defaultValue={pubkey} />
+          <Button type="submit" onClick={submitData}>
+            <Heart></Heart>
+          </Button>
+        </form>
+      ) : null}
     </div>
   )
 }

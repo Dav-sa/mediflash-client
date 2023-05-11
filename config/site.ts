@@ -21,7 +21,7 @@ export const siteConfig: SiteConfig = {
     },
     {
       title: "Likes",
-      href: "/blocks",
+      href: "/likes",
     },
   ],
   links: {
