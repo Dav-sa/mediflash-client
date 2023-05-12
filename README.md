@@ -17,7 +17,7 @@ David Sabri's technical assessment for the position of developer at Ternoa.
 - [Shadcn UI](https://ui.shadcn.com/) components
 - Clerk for the web3 authentication
 - React-query for data-fetching
-- React-testing library and Cypress for the tests
+-  Cypress for the tests
 
 ## Details
 
