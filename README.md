@@ -7,7 +7,7 @@ David Sabri's technical assessment for the position of developer at Ternoa.
 1. First page displays the NFT from the 20 mint collection
 2. A user can authenticate with metamask
 3. When authenticated, the user can like an NFT
-4. Fourth page displays the addresses that liked an NFT
+4. The "Likes" page displays the addresses that liked an NFT
 
 ## The stack
 
