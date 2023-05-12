@@ -1,6 +1,8 @@
 # Ternoa-test
 
 TL:DR
+ file:///home/jo/Videos/Screencasts/Screencast%20from%2012-05-2023%2014:54:46.webm
+-48:-34:85:44
 
 David Sabri's technical assessment for the position of developer at Ternoa.
 
