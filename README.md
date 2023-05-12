@@ -1,7 +1,7 @@
 # Ternoa-test
 
 TL:DR
- file:///home/jo/Videos/Screencasts/Screencast%20from%2012-05-2023%2014:54:46.webm
+
 -48:-34:85:44
 
 David Sabri's technical assessment for the position of developer at Ternoa.
@@ -30,7 +30,7 @@ David Sabri's technical assessment for the position of developer at Ternoa.
 - Thanks to React-Query, I just had to wrap the function in a "useQuery" hook.
 - I then passed the result to a paginate helper function, and mapped the data to display the NFTs.
 
-//screenshot
+![image](https://github.com/Dav-sa/ternoa-test/assets/68847199/4f25f50d-6141-47b2-853b-2518f705a9bc)
 
 ### The authentication feature
 
@@ -39,12 +39,17 @@ David Sabri's technical assessment for the position of developer at Ternoa.
 - They have components that you can just import, and it juste works out of the box
 - (Maybe you did not have this in mind when you wrote the requirements but I thought it was a good idea to use it)
 
-//screenshot
+![image](https://github.com/Dav-sa/ternoa-test/assets/68847199/423fd001-7fdc-4209-8113-1a40a5994d69)
 
 ### The "like NFT" feature
 
-- Okay so here we need to pause a bit and do some thinking. We need to store the likes somewhere because we want them to persist and we need a way to know who liked what.
-- So we have to set up a database, i chose to use PlanetScale which is a hosted SQL db.
-- Then we have to set up a client to interact with the db, I went for prisma.
-- I created two models : User and NFT, they have a many-to-many relationship which represents the "like" feature.
--
+- Okay so here we need to pause a bit and do some thinking. We have to store the likes somewhere because we want them to persist and we need a way to know who liked what.
+- So we are going to set up a database first, i chose to use PlanetScale which is a hosted SQL db.
+- Then we have to get a client to interact with the db, I went for prisma.
+- I created two models : User and NFT, they have a many-to-many relationship which represents the "likes". 
+- I then used the "api" feature of Next to create two endpoints: 
+on the first one we associate a user to a nft, on the second one we fetch the nfts from the database and include the users that liked them.
+
+![image](https://github.com/Dav-sa/ternoa-test/assets/68847199/1dd55791-b608-41d6-a592-5764ce1f219b)
+![image](https://github.com/Dav-sa/ternoa-test/assets/68847199/d5b96cff-2c09-45aa-88f8-b45dfc7b7145)
+
