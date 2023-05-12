@@ -1,19 +1,13 @@
-# Chainxplorer
-
-![image](https://user-images.githubusercontent.com/68847199/229071916-d0dab12a-6171-4df5-8cc4-736a9bca9371.png)
+# Ternoa-test
 
 TL:DR
 
-Chainxplorer is a blockchain explorer that allows you to search for a token, an address, or a block. It also displays the latest block info and the latest crypto prices. [See the demo here](
-https://chainxplorer.vercel.app )
+David Sabri's technical assessment for the position of developer at Ternoa.
 
-1. First page displays latest crypto prices
-2. Second page displays latest block info
-3. Third page displays the NFTS of an address
-4. Fourth page displays the erc20 tokens of an address
-
-![image](https://user-images.githubusercontent.com/68847199/229072407-1b3a27ec-16c4-4b2f-a24b-ffc3ce7b734c.png)
-
+1. First page displays the NFT from the 20 mint collection
+2. A user can authenticate with metamask
+3. When authenticated, the user can like an NFT
+4. Fourth page displays the addresses that liked an NFT
 
 ## The stack
 
@@ -21,24 +15,23 @@ https://chainxplorer.vercel.app )
 - TypeScript
 - TailwindCSS
 - [Shadcn UI](https://ui.shadcn.com/) components
-- Ethers and Alchemy SDK for the blockchain interaction
+- Clerk for the web3 authentication
 - React-query for data-fetching
+- React-testing library and Cypress for the tests
 
-![image](https://user-images.githubusercontent.com/68847199/229072503-cdde06aa-aa42-46af-b277-5c740c532981.png)
+## Details
 
+### The "fetch NFT"+pagination feature
 
-## Things I learned
+- Everything starts with a basic "fetch and display"
+- I've used the alchemy SDK before so I knew they had methods to fetch NFTs, I used the "getNftsForContract" and passed the contract address.
+- React-query makes this easy, I just had to wrap the function in a "useQuery" hook.
+- I then passed the result to a paginate helper function, and then mapped the data to display the NFTs.
 
-- React-query is great, it deals with server-state, caching, errors, I feel like i've only been scratching its surface.
-- NextJS's file based routing system is awesome.
-- I feel like I'm not using Next's rendering system to its full potential.
-- I was skeptical about inline style with tailwind but after this project I don't see myself going back to css-in-js or css modules for personnal projects.
-- Alchemy's sdk is awesome, it's very easy to use and it's well documented.
+### The authentication feature
 
-## Things I want to improve
+- I love exploring new tools, and recently I discovered Clerk
+- It is an authentication tool that offers various ways of authenticating, and Metamask is one of them.
+- They have
 
-- Ethers.js felt hard to use at first.
-- Testing coverage with React-testing-library and Jest.
-- Adding pagination to NFT page. 
-- Maybe try to dockerize the app and deploy it on a VPS.
-- While I'm at it, setting up a CI/CD pipeline with Github Actions could be nice.
+### The "like NFT" feature
