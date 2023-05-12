@@ -3,7 +3,7 @@
 TL:DR
 
 David Sabri's technical assessment for the position of developer at Ternoa.
- file:///home/jo/Downloads/Screencast%20from%2012-05-2023%2014_54_46.gif
+
 1. First page displays the NFT from the 20 mint collection
 2. A user can authenticate with metamask
 3. When authenticated, the user can like an NFT
