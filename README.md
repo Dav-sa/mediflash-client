@@ -25,13 +25,23 @@ David Sabri's technical assessment for the position of developer at Ternoa.
 
 - Everything starts with a basic "fetch and display"
 - I've used the alchemy SDK before so I knew they had methods to fetch NFTs, I used the "getNftsForContract" and passed the contract address.
-- React-query makes this easy, I just had to wrap the function in a "useQuery" hook.
-- I then passed the result to a paginate helper function, and then mapped the data to display the NFTs.
+- Thanks to React-Query, I just had to wrap the function in a "useQuery" hook.
+- I then passed the result to a paginate helper function, and mapped the data to display the NFTs.
+
+//screenshot
 
 ### The authentication feature
 
 - I love exploring new tools, and recently I discovered Clerk
-- It is an authentication tool that offers various ways of authenticating, and Metamask is one of them.
-- They have
+- It is an authentication service that offers various ways of authenticating, and Metamask is one of them.
+- They have components that you can just import, and it juste works out of the box
+- (Maybe you did not have this in mind when you wrote the requirements but I thought it was a good idea to use it)
+
+//screenshot
 
 ### The "like NFT" feature
+
+- Okay so here we need to pause a bit and do some thinking. We need to store the likes somewhere because we want them to persist and we need a way to know who liked what.
+- So we have to set up a database, i chose to use PlanetScale which is a hosted SQL db.
+- I need to seed my database with the nfts, so I need a client, I chose prisma.
+-
