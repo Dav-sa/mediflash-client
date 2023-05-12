@@ -2,8 +2,6 @@
 
 TL:DR
 
--48:-34:85:44
-
 David Sabri's technical assessment for the position of developer at Ternoa.
 
 1. First page displays the NFT from the 20 mint collection
