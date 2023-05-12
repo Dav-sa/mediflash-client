@@ -43,5 +43,6 @@ David Sabri's technical assessment for the position of developer at Ternoa.
 
 - Okay so here we need to pause a bit and do some thinking. We need to store the likes somewhere because we want them to persist and we need a way to know who liked what.
 - So we have to set up a database, i chose to use PlanetScale which is a hosted SQL db.
-- I need to seed my database with the nfts, so I need a client, I chose prisma.
+- Then we have to set up a client to interact with the db, I went for prisma.
+- I created two models : User and NFT, they have a many-to-many relationship which represents the "like" feature.
 -
