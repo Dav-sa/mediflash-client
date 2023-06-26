@@ -1,6 +1,4 @@
-
-
-describe("ternoa test app", () => {
+describe("Mediflash test app", () => {
   beforeEach(() => {
     cy.visit("https://localhost:3000")
   })
