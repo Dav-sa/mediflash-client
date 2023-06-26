@@ -9,7 +9,7 @@ interface CardProps {
   types: string[]
 }
 
-export const Card = ({ name, imageUrl, types }: CardProps) => {
+export const DetailCard = ({ name, imageUrl, types }: CardProps) => {
   return (
     <div className=" flex flex-col items-center rounded-xl border-sky-700 bg-slate-800 p-6 text-center hover:border-2 hover:border-solid ">
       <Image
@@ -36,10 +36,10 @@ export const Card = ({ name, imageUrl, types }: CardProps) => {
         </p>
         <Button
           onClick={() => {
-            Router.push("/pokemon/[name]", `/pokemon/${name}`)
+            Router.push("/")
           }}
         >
-          More details
+          Go back
         </Button>
       </div>
     </div>
