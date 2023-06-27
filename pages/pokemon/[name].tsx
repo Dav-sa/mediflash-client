@@ -10,7 +10,7 @@ export default function IndexPage() {
   const router = useRouter()
   const { name } = router.query
   const { isLoading, error, data } = useQuery(
-    ["getPokemonByName"],
+    ["getPokemonByName", name],
     async () => {
       const apiRes = await fetch(
         `https://mediflash-server.onrender.com/pokemons/${name}`
@@ -21,7 +21,7 @@ export default function IndexPage() {
   if (isLoading)
     return (
       <Layout>
-        <Loading></Loading>
+        <Loading>{console.log("loading")}</Loading>
       </Layout>
     )
   if (error) return `An error has occurred`

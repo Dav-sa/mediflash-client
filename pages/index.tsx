@@ -55,6 +55,7 @@ export default function IndexPage() {
             )
           })}
       </section>
+
       <Pagination
         items={data.pokemons.length}
         currentPage={currentPage}
