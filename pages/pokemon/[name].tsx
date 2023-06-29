@@ -13,7 +13,7 @@ export default function IndexPage() {
     ["getPokemonByName", name],
     async () => {
       const apiRes = await fetch(
-        `https://mediflash-server.onrender.com/pokemons/${name}`
+        `https://mediflash-server-production.up.railway.app/pokemons/${name}`
       )
       return apiRes.json()
     }

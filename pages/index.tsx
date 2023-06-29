@@ -15,7 +15,9 @@ export default function IndexPage() {
     setCurrentPage(page)
   }
   const { isLoading, error, data } = useQuery(["getPokemons"], async () => {
-    const apiRes = await fetch("https://mediflash-server.onrender.com/pokemons")
+    const apiRes = await fetch(
+      "https://mediflash-server-production.up.railway.app/pokemons"
+    )
     return apiRes.json()
   })
   const paginatedPosts = data
