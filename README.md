@@ -8,6 +8,9 @@ Test technique réalisé par David Sabri dans le cadre du test technique pour M�
 2. Un utilisateur peut cliquer sur un pokemon pour avoir plus de détails
 3. En bas de page, une pagination permet d'afficher les pokemons suivants
 
+![image](https://github.com/Dav-sa/mediflash-client/assets/68847199/2a5834a0-26e3-491c-b872-5ab1d4cc8982)
+
+
 ## La stack
 
 - NextJS
@@ -26,3 +29,4 @@ Test technique réalisé par David Sabri dans le cadre du test technique pour M�
 - On passe le résultat a une fonction paginante, et on map sur ce résultat.
 
 ### Le front est déployé sur Vercel
+https://mediflash-client-khctadopg-davsab.vercel.app/
