@@ -21,7 +21,7 @@ export default function IndexPage() {
   if (isLoading)
     return (
       <Layout>
-        <Loading>{console.log("loading")}</Loading>
+        <Loading></Loading>
       </Layout>
     )
   if (error) return `An error has occurred`
